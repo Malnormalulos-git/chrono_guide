@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import config from './config.json'
+import getCountryCodeByName from './shared/getCountryCodeByName';
 
 const App = () => {
   const [country, setCountry] = useState('');
@@ -52,7 +53,14 @@ const App = () => {
           { timeData && (
             <Card>
               <Card.Body>
-                  <h2 className="text-center mb-4">Current time in {timeData.geo.city && (timeData.geo.city + ", ")} {timeData.geo.country}</h2>
+                  <h2 className="text-center mb-4">
+                    Current time in {timeData.geo.city && (timeData.geo.city + ", ")} {timeData.geo.country + " "}
+                    <img
+                      src={`https://flagcdn.com/h20/${getCountryCodeByName(timeData.geo.country)}.png`}
+                      alt={timeData.geo.country + " flag"}
+                    />
+                  </h2>
+                  
                   <p className="text-center">{timeData.date_time_txt}</p>
               </Card.Body>
             </Card>
