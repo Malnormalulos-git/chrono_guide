@@ -1,0 +1,23 @@
+.yellow-text {
+  color: #ffdd57;
+}
+
+.blue-text {
+  color: #0077b6;
+}
+
+.yellow-bg {
+  background-color: #ffdd57;
+}
+
+.mt-3.yellow-bg {
+  color: #0077b6;
+}
+
+.mt-3.yellow-bg:hover {
+  color: #ffdd57;
+}
+
+.blue-bg {
+  background-color: #0077b6;
+}
